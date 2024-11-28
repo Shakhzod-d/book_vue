@@ -7,7 +7,7 @@ const router = useRouter(),
     { id: 2, path: '/videos', label: 'Video' }
   ],
   selectRoute = [
-    { id: 1, path: '/bok', label: 'She’rlar ' },
+    { id: 1, path: '/poems', label: 'She’rlar ' },
     { id: 2, path: '/translations', label: 'Tarjimalar' },
     { id: 3, path: '/dos', label: 'Dostonlar' },
     { id: 4, path: '/books', label: 'Kitoblar' }
