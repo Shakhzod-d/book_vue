@@ -82,6 +82,16 @@ const router = createRouter({
       path: '/poems',
       name: 'Poems',
       component: () => import('../views/Poems.vue')
+    },
+    {
+      path: '/epics',
+      name: 'Epics',
+      component: () => import('../views/Epics.vue')
+    },
+    {
+      path: '/poem/:slug',
+      name: 'Poem',
+      component: () => import('../views/Poem.vue')
     }
   ],
   linkActiveClass: 'active'

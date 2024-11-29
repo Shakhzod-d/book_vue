@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import TranslationList from '@/components/TranslationList/TranslationList.vue'
+
+const data = [
+  { id: 1, text: 'Kechagi kun (Lermentov sheri tarjimasi)' },
+  { id: 2, text: 'Kechagi kun (Lermentov sheri tarjimasi)' }
+]
 </script>
 
 <template>
@@ -20,6 +25,6 @@ import TranslationList from '@/components/TranslationList/TranslationList.vue'
     </div>
   </section>
   <div>
-    <TranslationList />
+    <TranslationList :data="data" />
   </div>
 </template>
