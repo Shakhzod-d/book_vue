@@ -1,13 +1,15 @@
 <script setup>
-const list = [
-  { label: 'Xotiralar', path: '/favorites/xotiralar' },
-  { label: 'Video', path: '/favorites/videos' },
-  { label: 'Suratlar', path: '/favorites/pictures' },
-  { label: 'She’rlar', path: '/favorites/poems' },
-  { label: 'Tarjimalar ', path: '/favorites/translations' },
-  { label: 'Dostonlar', path: '/favorites/epics' },
-  { label: 'Kitoblar', path: '/favorites/books' }
-]
+import { list } from '@/utils/constants'
+import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const navigate = useRouter()
+const pathname = window.location.pathname
+onMounted(() => {
+  if (pathname.endsWith('/favorites')) {
+    navigate.push('/favorites/xotiralar')
+  }
+})
 </script>
 <template>
   <main class="px-16 pt-10">

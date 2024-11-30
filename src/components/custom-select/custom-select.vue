@@ -5,7 +5,8 @@ import { RouterLink } from 'vue-router'
 
 defineProps({
   text: String,
-  options: Array
+  options: Array,
+  id: Number
 })
 </script>
 <template>
@@ -23,7 +24,8 @@ defineProps({
     <!-- Dropdown -->
     <div
       id="dropdown"
-      class="bg-[#00000033] rounded-xl absolute top-7 py-2.5 px-[29px] flex flex-col dropdown"
+      class="bg-[#00000033] rounded-xl absolute top-7 py-2.5 px-[29px] flex flex-col dropdown "
+      :class="id ==2 ?'w-[200px]':''"
     >
       <RouterLink :to="item.path" class="text-white" v-for="item in options" :key="item.label">
         {{ item.label }}
