@@ -1,3 +1,7 @@
+<script setup>
+import FavoriteVideoPlayer from '@/components/FavoriteVideoPlayer/FavoriteVideoPlayer.vue'
+</script>
+
 <template>
-  <h1>Videolar</h1>
+  <div class="container"><FavoriteVideoPlayer /></div>
 </template>

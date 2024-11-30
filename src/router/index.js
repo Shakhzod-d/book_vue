@@ -77,6 +77,21 @@ const router = createRouter({
       path: '/books',
       name: 'Books',
       component: () => import('../views/Books.vue')
+    },
+    {
+      path: '/poems',
+      name: 'Poems',
+      component: () => import('../views/Poems.vue')
+    },
+    {
+      path: '/epics',
+      name: 'Epics',
+      component: () => import('../views/Epics.vue')
+    },
+    {
+      path: '/poem/:slug',
+      name: 'Poem',
+      component: () => import('../views/Poem.vue')
     }
   ],
   linkActiveClass: 'active'

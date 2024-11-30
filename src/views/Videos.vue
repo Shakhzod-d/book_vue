@@ -1,3 +1,35 @@
+<script setup lang="ts">
+import { Download, Heart, Forward } from 'lucide-vue-next'
+</script>
+
 <template>
-  <h1>Vedios</h1>
+  <div class="container my-16">
+    <div>
+      <iframe
+        class="w-full h-[618px] bg-zinc-300 rounded-[20px] bg-[url(@/assets/image/vedio.png)] bg-no-repeat bg-center"
+        src=""
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="grid grid-cols-3 my-16 gap-20">
+      <div class="flex gap-3 flex-col" v-for="item in ['', '', '', '', '', '']" :key="item">
+        <div class="flex-shirk-0 w-full flex items-end gap-5">
+          <iframe
+            class="flex-shirk-0 max-w-[426px] w-full h-[284px] bg-zinc-300 rounded-[20px] bg-[url(@/assets/image/vedio.png)] bg-no-repeat bg-center"
+            src=""
+          ></iframe>
+          <div class="flex flex-col gap-5">
+            <Heart />
+            <Forward />
+            <Download />
+          </div>
+        </div>
+        <div class="pl-2">
+          <p>video discriptions</p>
+          <p>video discriptions</p>
+          <p>video discriptions</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
