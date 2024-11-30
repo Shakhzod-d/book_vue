@@ -11,6 +11,11 @@ const router = useRouter(),
     { id: 2, path: '/translations', label: 'Tarjimalar' },
     { id: 3, path: '/epics', label: 'Dostonlar' },
     { id: 4, path: '/books', label: 'Kitoblar' }
+  ],
+  selectRoute2 = [
+    { id: 1, path: '/poems', label: 'Yoshlikdagi suratlar ' },
+    { id: 2, path: '/translations', label: 'Oilaviy suratlar ' },
+    { id: 3, path: '/epics', label: 'Hamkasblar bilan' }
   ]
 </script>
 
@@ -20,7 +25,7 @@ const router = useRouter(),
       <RouterLink to="/" class="text-[#FFFFFF] font-bold text-[24px]">Sa’dulla Hakim</RouterLink>
       <nav class="w-full max-w-[700px]">
         <ul class="flex justify-between max-w-[700px] m-auto">
-          <CustomSelect text="Kitoblar" :options="selectRoute" />
+          <CustomSelect text="Kitoblar" :options="selectRoute" :id="1"/>
           <RouterLink
             :to="item.path"
             class="text-xl text-white"
@@ -28,7 +33,7 @@ const router = useRouter(),
             :key="item.id"
             >{{ item.label }}</RouterLink
           >
-          <CustomSelect text="Suratlar" :options="selectRoute" />
+          <CustomSelect text="Suratlar" :options="selectRoute2" :id="2"/>
         </ul>
       </nav>
       <div class="flex gap-4">

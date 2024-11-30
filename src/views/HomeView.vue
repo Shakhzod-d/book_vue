@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+// import { useApi } from '@/api/useApi'
+
+// const { data, get } = useApi()
+// get('/sherlar')
+// console.log(data.value)
+</script>
 
 <template>
   <main>
@@ -21,23 +27,25 @@
         soʻz” (2000), “Saylanma” (2001), “Koʻngil yuzi” (2006), “Koʻhna naql” (2011), (2019) sheʼriy
         kitoblari nashr etildi. Gyote, Pushkin, Lermontov, Yesenin, Yunus Emro kabi shoirlarning
         sheʼrlarini tarjima qildi. “Saylanma” kitobi uchun 2002-yili “Eng ulugʻ, eng aziz”
-        respublika tanlovi gʻolibi boʻldi. Maʼnaviy hayotimizga oid “Esimda qolgan kunlar”, “Atom
-        qaʼriga sayohat” kabi publitsistik asarlarida xalqning fidoyi insonlari bosib o’tgan yollari
-        yoritildi. Uning tarixiy qahramonlikni ulugʻlovchi “Olis yulduz” (1980) dostoni muxlislar
-        eʼtiboriga sazovor bo’ldi. Dostonda shoir vatan ozodligi uchun olib borilgan kurashlarni
-        tarixiy voqealar orqali yoritib, hurlik va erkinlik g’oyalarini ilgari suradi. “Oqsaroy”
-        (2001) manzumasida istiqlolimiz va davlat boshqaruvi ramziga aylangan Oqsaroy qarorgohi
-        tarixiy-zamonaviy nuqtai nazardan mushtarak obraz sifatida tarannum etilsa, “Bola Botir”
-        dostonida (2013) badiiy soʻzning ulkan maqsadlar va mustahkam eʼtiqod yoʻlidagi oʻrni,
-        ahamiyati tiniq obrazlar vositasida ochib beriladi. Shoirning vatan tarixi va uning shonli
-        siymolariga mehr-muhabbat, ulardan faxr va iftixor tuyg’ulari hamda elim, yurtim deb
-        yashagan fidoyi insonlarga xos yuksak fazilatlar badiiy tarannum etilgan “Yurt o’g’loni”
-        (2019) dostoni adabiy jamoatchilik nazariga tushdi. Saʼdulla Hakim “Oʻzbekiston
-        Respublikasida xizmat koʻrsatgan madaniyat xodimi”, “Oʻzbekiston Respublikasida xizmat
-        koʻrsatgan jurnalist”, “Mehnat faxriysi” unvonlari, “Mehnat shuhrati” ordeni bilan
-        taqdirlangan. Saʼdulla Hakim 2020-yil 10- oktyabrda Toshkent shahrida vafot etdi. 2021-yilda
-        shoirning 70 yillik yubileyi davlatimiz va adabiy jamoatchilik tomonidan keng miqyosda
-        nishonlanib, shoir yashagan uyga yodgorlik lavhasi o‘rnatildi.
+        respublika tanlovi gʻolibi boʻldi. <br />
+        <br />
+        Maʼnaviy hayotimizga oid “Esimda qolgan kunlar”, “Atom qaʼriga sayohat” kabi publitsistik
+        asarlarida xalqning fidoyi insonlari bosib o’tgan yollari yoritildi. Uning tarixiy
+        qahramonlikni ulugʻlovchi “Olis yulduz” (1980) dostoni muxlislar eʼtiboriga sazovor bo’ldi.
+        Dostonda shoir vatan ozodligi uchun olib borilgan kurashlarni tarixiy voqealar orqali
+        yoritib, hurlik va erkinlik g’oyalarini ilgari suradi. “Oqsaroy” (2001) manzumasida
+        istiqlolimiz va davlat boshqaruvi ramziga aylangan Oqsaroy qarorgohi tarixiy-zamonaviy
+        nuqtai nazardan mushtarak obraz sifatida tarannum etilsa, “Bola Botir” dostonida (2013)
+        badiiy soʻzning ulkan maqsadlar va mustahkam eʼtiqod yoʻlidagi oʻrni, ahamiyati tiniq
+        obrazlar vositasida ochib beriladi. Shoirning vatan tarixi va uning shonli siymolariga
+        mehr-muhabbat, ulardan faxr va iftixor tuyg’ulari hamda elim, yurtim deb yashagan fidoyi
+        insonlarga xos yuksak fazilatlar badiiy tarannum etilgan “Yurt o’g’loni” (2019) dostoni
+        adabiy jamoatchilik nazariga tushdi. Saʼdulla Hakim “Oʻzbekiston Respublikasida xizmat
+        koʻrsatgan madaniyat xodimi”, “Oʻzbekiston Respublikasida xizmat koʻrsatgan jurnalist”,
+        “Mehnat faxriysi” unvonlari, “Mehnat shuhrati” ordeni bilan taqdirlangan. Saʼdulla Hakim
+        2020-yil 10- oktyabrda Toshkent shahrida vafot etdi. 2021-yilda shoirning 70 yillik yubileyi
+        davlatimiz va adabiy jamoatchilik tomonidan keng miqyosda nishonlanib, shoir yashagan uyga
+        yodgorlik lavhasi o‘rnatildi.
       </p>
     </div>
   </main>
