@@ -1,5 +1,5 @@
 <script setup>
-import PictureCard from '@/components/PictureCard/PictureCard.vue'
+import PhotoCard from '@/components/PhotoCard/PhotoCard.vue'
 
 const imgData = [
   {
@@ -34,9 +34,7 @@ const imgData = [
 </script>
 
 <template>
-  <div
-    class="grid grid-cols-4 max-3xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 justify-items-center gap-[50px] my-10"
-  >
-    <PictureCard :url="imgData" />
+  <div class="container flex flex-wrap gap-[50px] my-10">
+    <PhotoCard :url="imgData" />
   </div>
 </template>

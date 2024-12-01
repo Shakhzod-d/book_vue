@@ -1,30 +1,38 @@
 <script setup lang="ts">
 import PoemsCard from '@/components/PoemsCard/PoemsCard.vue'
+import Button from '@/components/customButton/CustomButton.vue'
 
-const data = [
+interface DataType {
+  id: number
+  text: string
+  subtitle: string
+  title: string
+}
+
+const data: DataType[] = [
   {
     id: 1,
     title: `QUDUQDAN TO’KILGAN NUR`,
-    text: `Olam to'rt unsurdan iborat: tuproq, suv, havo, olov. Odam to'rt ustundan barhayot: ota, 
+    text: `Olam to'rt unsurdan iborat: tuproq,<br/> suv, havo, olov. Odam to'rt ustundan <br/> barhayot: ota, 
     ona, Vatan, el. `,
     subtitle: 'SHOIRNING BIRINCHI SHE’RI:'
   },
   {
     id: 2,
     title: `EY, KO’NGIL`,
-    text: `Nopisand bosma xazon yaprog‘ini, Boshing uzra esla soya chog‘ini.Tanfi hukmiga azal bir chora yo‘q, Bandasi bilmas kelib-ketmog‘ini.`,
+    text: `Nopisand bosma xazon yaprog‘ini,<br/>Boshing uzra esla soya chog‘ini.<br/>Tanfi hukmiga azal bir chora yo‘q,<br/>Bandasi bilmas kelib-ketmog‘ini.`,
     subtitle: ''
   },
   {
     id: 3,
     title: `OTALAR VA BOLALAR`,
-    text: `Agar xonadonga kirsa bir kitobBir kuni, albatta, varaqlanajak.O‘smani qoshida yayratsa ona,Qizi zulfin qilar burama gajak.`,
+    text: `Agar xonadonga kirsa bir kitob<br/>Bir kuni, albatta, varaqlanajak.<br/>O‘smani qoshida yayratsa ona,<br/>Qizi zulfin qilar burama gajak.`,
     subtitle: ''
   },
   {
     id: 4,
     title: `IZLAR`,
-    text: `Ikki cheti orasta, Yolg‘izoyoq chambil yo‘l. Ketib boraman asta, Har yonda giyohlar mo‘l.`,
+    text: `Ikki cheti orasta,<br/>Yolg‘izoyoq chambil yo‘l.<br/>Ketib boraman asta,<br/>Har yonda giyohlar mo‘l.`,
     subtitle: ''
   }
 ]
@@ -32,10 +40,10 @@ const data = [
 
 <template>
   <section
-    class="bg-[url(@/assets/image/poems-bg.jpg)] min-h-[718px] w-full bg-top bg-cover flex items-center justify-center flex-col py-7"
+    class="bg-[url(@/assets/image/poems-bg.jpg)] min-h-[718px] w-full bg-top bg-cover flex items-center justify-center flex-col py-7 "
   >
     <div
-      class="max-w-[660px] text-left font-semibold italic font-serif text-3xl"
+      class="max-w-[660px] text-left font-semibold italic font-serif text-3xl max-sm:text-2xl max-m:text-xl max-s:text-base"
       style="text-shadow: rgba(0, 0, 0, 0.2) 2px 5px"
     >
       <h2 class="mb-6">ESKI KITOB</h2>
@@ -53,6 +61,12 @@ const data = [
   </section>
   <section class="container mt-16">
     <PoemsCard :poems="data" />
-    <img src="@/assets/image/pagination.png" class="block mx-auto" alt="" />
+    <div class="w-full flex justify-center gap-3 py-2">
+      <Button :text="'Prev'" />
+      <Button :text="'1'" />
+      <Button :text="'2'" />
+      <Button :text="'..'" />
+      <Button :text="'next'" />
+    </div>
   </section>
 </template>

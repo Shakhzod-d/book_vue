@@ -89,6 +89,11 @@ const router = createRouter({
       component: () => import('../views/Epics.vue')
     },
     {
+      path: '/picture/:slug',
+      name: 'Picture',
+      component: () => import('../views/PictureView.vue')
+    },
+    {
       path: '/poem/:slug',
       name: 'Poem',
       component: () => import('../views/Poem.vue')

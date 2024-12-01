@@ -1,5 +1,3 @@
-
-
 <script setup>
 import TranslationList from '@/components/TranslationList/TranslationList.vue'
 
@@ -11,10 +9,10 @@ const data = [
 
 <template>
   <header
-    class="flex w-full bg-[url(@/assets/image/epics-header_bg.jpg)] items-center bg-no-repeat bg-cover justify-center gap-12"
+    class="flex w-full bg-[url(@/assets/image/epics-header_bg.jpg)] items-center bg-no-repeat bg-cover justify-center gap-12 p-4 max-3xl:flex-wrap"
   >
     <img src="@/assets/image/epics-header_img.png" alt="" />
-    <p class="font-semibold text-3xl leading-[38px] max-w-[1125px] font-serif">
+    <p class="font-semibold text-3xl leading-[38px] max-w-[1125px] font-serif max-sm:text-2xl max-m:text-xl max-s:text-base">
       Yaxshiyam, bu dunyoda ko’ngil qatidagi mudroq hislarni qaytadan uyg’otadigan, ezgu hotiralarni
       yodga soladigan kitoblar bor. Chingiz Aytmatov asarlarini eslayman. Buyuk muallifning
       talqinicha, odamlarning bir qavmi qachonlardir Shohdor Ona Bo'g'udan o'rigan, beozor bolakay

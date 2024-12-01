@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Heart, Forward } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
 import { PropType } from 'vue'
 
@@ -24,7 +23,7 @@ function goToPoem(slug: string) {
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-16 justify-center">
+  <div class="flex flex-wrap gap-16 max-xl:justify-center">
     <div
       class="pt-8 px-10 pb-10 max-s:py-5 max-s:px-6 max-w-[548px] w-full bg-[linear-gradient(180deg,#355F85_0%,#477EB0_11%,#4EA2EF_34%,#5EA7EB_72%)] rounded-lg shadow-md border border-gray-200 relative text-white overflow-hidden"
       v-for="item in poems"
@@ -53,9 +52,8 @@ function goToPoem(slug: string) {
         class="text-white text-[19px] font-normal text-left max-s:text-base text-nowrap"
         v-html="item.text"
       ></p>
-      <div class="absolute top-[22px] right-[22px] max-s:top-3 max-s:right-3 flex gap-2 flex-col">
-        <Heart class="stroke-white" />
-        <Forward class="stroke-white" />
+      <div class="absolute top-[22px] right-[22px]">
+        <img src="@/assets/icons/option.svg" alt="" />
       </div>
     </div>
   </div>

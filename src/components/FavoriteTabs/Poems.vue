@@ -1,3 +1,37 @@
+<script setup lang="ts">
+import FavoritePoemsCard from '@/components/FavoritePoemsCard/FavoritePoemsCard.vue'
+
+interface DataType {
+  id: number
+  text: string
+  subtitle: string
+  title: string
+}
+
+const data: DataType[] = [
+  {
+    id: 2,
+    title: `EY, KO’NGIL`,
+    text: `Nopisand bosma xazon yaprog‘ini,<br/>Boshing uzra esla soya chog‘ini.<br/>Tanfi hukmiga azal bir chora yo‘q,<br/>Bandasi bilmas kelib-ketmog‘ini.`,
+    subtitle: ''
+  },
+  {
+    id: 3,
+    title: `OTALAR VA BOLALAR`,
+    text: `Agar xonadonga kirsa bir kitob<br/>Bir kuni, albatta, varaqlanajak.<br/>O‘smani qoshida yayratsa ona,<br/>Qizi zulfin qilar burama gajak.`,
+    subtitle: ''
+  },
+  {
+    id: 4,
+    title: `IZLAR`,
+    text: `Ikki cheti orasta,<br/>Yolg‘izoyoq chambil yo‘l.<br/>Ketib boraman asta,<br/>Har yonda giyohlar mo‘l.`,
+    subtitle: ''
+  }
+]
+</script>
+
 <template>
-  <h1>She’rlar</h1>
+  <div class="my-10">
+    <FavoritePoemsCard :poems="data" />
+  </div>
 </template>
