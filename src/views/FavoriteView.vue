@@ -12,8 +12,10 @@ onMounted(() => {
 })
 </script>
 <template>
-  <main class="px-16 pt-10">
-    <div class="bg-[#4EA2EF] w-full rounded-xl px-[35px] py-[13px] gap-[70px] flex mb-4">
+  <main class="px-16 py-10 max-lg:px-12 max-m:px-7 max-s:px-4">
+    <div
+      class="bg-[#4EA2EF] w-full rounded-xl px-[35px] py-[13px] gap-[70px] flex mb-4 overflow-auto hide-scrollbar"
+    >
       <RouterLink
         v-for="item of list"
         :key="item.label"

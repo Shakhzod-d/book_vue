@@ -8,8 +8,37 @@
 
 <template>
   <main>
-    <img src="../assets/image/home-bg.png" alt="" class="mb-10" />
-    <div class="w-full max-w-[1800px] m-auto bg-white shadow-md rounded-xl mb-10 px-16 py-4">
+    <div
+      class="w-full bg-[url(@/assets/image/home-bg.png)] bg-no-repeat flex items-center justify-center gap-[100px] mb-8 flex-wrap bg-cover bg-center pb-5"
+    >
+      <img src="@/assets/image/home_img.png" alt="shoir" />
+      <div class="flex flex-col items-center gap-10">
+        <h2 class="text-white text-[26px] font-semibold font-['Lora'] underline leading-[35px]">
+          Boshi tik odam
+        </h2>
+        <p
+          class="text-white text-[26px] font-semibold font-['Lora'] leading-[35px] max-m:text-2xl max-s:text-xl"
+        >
+          Yulduzlarga tutash choʻqqida, qarang,<br />
+          Togʻlar salobati, koʻrki mujassam.<br />
+          Tuz bergan eliga keltirar sharaf<br />
+          Choʻqqi kabi yuksak qalb sohibi ham.<br />
+          <br />
+          Magʻrur chorlab turar, kunduzmi-kecha,<br />
+          Hech qachon urmagay erga qadrini.<br />
+          Bamisli quyoshga intilgan chechak<br />
+          Millat unga qarab tiklar qaddini.<br />
+          <br />
+          Yuksaklik quyidan boshlanar desam,<br />
+          Balki joʻn qarashdek tuyular bu hol.<br />
+          Asli oʻzi shunday, boshi tik odam <br />
+          Oyogʻi ostini koʻrajak yaqqol.
+        </p>
+      </div>
+    </div>
+    <div
+      class="w-full max-w-[1800px] m-auto bg-white shadow-md rounded-xl mb-10 px-16 py-4 max-m:px-5"
+    >
       <h1 class="text-[40px] font-semibold mb-10">Sa’dulla Hakim</h1>
       <p class="text-[20px] font-semibold text-justify">
         Shoir, jurnalist, davlat va jamoat arbobi Saʼdulla Hakim 1951-yil 25- martda Jizzax

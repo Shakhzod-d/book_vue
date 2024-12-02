@@ -16,7 +16,7 @@ class Modal {
 <!-- </script> -->
 
 <template>
-  <div class="grid grid-cols-3 my-16 gap-20">
+  <div class="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 justify-center my-16 gap-20">
     <div class="flex gap-3 flex-col" v-for="item in ['', '', '', '', '', '']" :key="item">
       <div class="flex-shirk-0 w-full flex items-end relative">
         <iframe

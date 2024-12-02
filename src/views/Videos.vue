@@ -6,13 +6,17 @@ import { Download, Heart, Forward } from 'lucide-vue-next'
   <div class="container my-16">
     <div>
       <iframe
-        class="w-full h-[618px] bg-zinc-300 rounded-[20px] bg-[url(@/assets/image/vedio.png)] bg-no-repeat bg-center"
+        class="w-full h-[618px] max-lg:h-[400px] max-s:h-[300px] bg-zinc-300 rounded-[20px] bg-[url(@/assets/image/vedio.png)] bg-no-repeat bg-center"
         src=""
         allowfullscreen
       ></iframe>
     </div>
-    <div class="grid grid-cols-3 my-16 gap-20">
-      <div class="flex gap-3 flex-col" v-for="item in ['', '', '', '', '', '']" :key="item">
+    <div class="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 justify-center my-16 gap-20">
+      <div
+        class="flex gap-3 flex-col flex-shrink-0"
+        v-for="item in ['', '', '', '', '', '']"
+        :key="item"
+      >
         <div class="flex-shirk-0 w-full flex items-end gap-5">
           <iframe
             class="flex-shirk-0 max-w-[426px] w-full h-[284px] bg-zinc-300 rounded-[20px] bg-[url(@/assets/image/vedio.png)] bg-no-repeat bg-center"

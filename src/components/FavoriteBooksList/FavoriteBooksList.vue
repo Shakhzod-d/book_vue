@@ -7,10 +7,13 @@ defineProps({
 <template>
   <div class="flex flex-wrap justify-start gap-10">
     <div
-      class="w-full bg-white shadow-xl max-w-[300px] min-h-[330px] p-4 rounded-lg cursor-pointer hover:translate-y-[-6px] transition-all hover:shadow-2xl"
+      class="w-full bg-white shadow-xl max-w-[300px] min-h-[330px] p-4 rounded-lg cursor-pointer hover:translate-y-[-6px] transition-all hover:shadow-2xl relative"
       v-for="item of books"
       :key="item"
     >
+      <div class="absolute top-[12px] right-[12px]">
+        <img src="@/assets/icons/option.svg" alt="" />
+      </div>
       <div class="w-full h-[150px]">
         <img :src="item.muqova" alt="photo" class="h-[150px] object-center" />
       </div>
