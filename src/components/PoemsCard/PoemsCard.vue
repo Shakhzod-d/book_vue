@@ -1,24 +1,17 @@
-<script setup lang="ts">
+<script setup>
 import { Heart, Forward } from 'lucide-vue-next'
 import { useRouter } from 'vue-router'
-import { PropType } from 'vue'
-
-interface Poem {
-  id: number
-  text: string
-  subtitle: string
-  title: string
-}
 
 defineProps({
   poems: {
-    type: Array as PropType<Poem[]>,
+    type: Array,
     required: true
   }
 })
+
 const router = useRouter()
 
-function goToPoem(slug: string) {
+function goToPoem(slug) {
   router.push({ name: 'Poem', params: { slug } })
 }
 </script>
@@ -31,6 +24,7 @@ function goToPoem(slug: string) {
       :key="item.id"
       @click="goToPoem(item.id.toString())"
     >
+      {{ item.id }}
       <div class="flex items-center mb-4">
         <img
           src="@/assets/image/poems-card-img.png"
@@ -46,7 +40,7 @@ function goToPoem(slug: string) {
       <div>
         <p class="text-white text-[23px] font-semibold max-s:text-xl">{{ item.subtitle }}</p>
         <h3 class="text-white text-[23px] font-semibold mt-4 max-s:text-xl">
-          {{ item.title }}
+          {{ item.ism }}
         </h3>
       </div>
       <p

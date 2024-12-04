@@ -1,5 +1,14 @@
 <script setup>
+import { useApi } from '@/api/useApi'
 import { Heart, Forward, Eye } from 'lucide-vue-next'
+import { useRoute } from 'vue-router'
+const route = useRoute() // Route ma'lumotlariga kirish
+const id = route.params.slug
+const { data } = useApi(`/id-orqali/${id}/`)
+
+// const sanitizedHtml = DOMPurify.sanitize(data[0].text)
+
+//  const poem =data[0]?.text
 </script>
 
 <template>
@@ -8,30 +17,25 @@ import { Heart, Forward, Eye } from 'lucide-vue-next'
       <div class="flex flex-col items-center gap-4">
         <img src="@/assets/image/poems-card-img.png" alt="" class="w-[150px] h-[150px]" />
         <h2 class="font-bold text-black text-3xl leading-[38px] underline text-center">
-          Sa’dulla Hakim
+          {{ data[0].ism }}
         </h2>
       </div>
       <h2 class="font-bold text-black text-[40px] leading-[51px]">VATANGA MANSUBLIK</h2>
 
-      <p class="font-normal text-black text-[35px] leading-[44px] text-left">
-        Banogoh cho‘qqidan qulasa bir tosh <br />Tog‘ poyiga tushar, togni tark etmas. <br />Et
-        bilan tirnokdek bir jonu bir tan <br />Vatandan yaralgan Vatandan ketmas.<br /><br />Quyoshga
-        intilgan havoyi bug‘lar <br />Baland parvozlarni qilsa ham havas <br />Bir kun qaytib kelar
-        o‘kirib-yig‘lab, <br />Vatandan yaralgan Vatandan ketmas.<br /><br />Shashmaqom - ming
-        yillik navo muattar, <br />Ochsam ko‘kayimni yangrar qadim sas. <br />Avlodlar tug‘ilar,
-        ajdodlar o‘tar, <br />Vatandan yaralgan Vatandan ketmas.<br /><br />Ulug‘lar yuksalar yer
-        ostida ham, <br />Haykal bo‘lib o‘sar, eli unutmas. <br />Shahidlar bog‘idan kuylab
-        o‘taman: <br />Vatandan yaralgan Vatandan ketmas.<br /><br />Toshdan uchgan uchqun yalt etib
-        o‘char, <br />O’chgan cho‘g‘ qayta o‘z holiga kelmas. <br />Choponing silkisang g‘ubori
-        ko‘char, <br />Vatandan to‘qilgan Vatandan emas!
-      </p>
+      <p
+        class="font-normal text-black text-[35px] leading-[44px] text-left"
+        v-html="data[0].text"
+      ></p>
+      >
 
       <div class="flex w-full justify-between mb-8">
         <div class="flex gap-[25px]">
           <Heart />
           <Forward />
         </div>
-        <p class="font-normal text-black text-[15px] leading-[19px]"><Eye /> 10K</p>
+        <p class="font-normal text-black text-[15px] leading-[19px] text-center">
+          <Eye /> {{ data[0].tashrif_buyuruvchilar }}
+        </p>
       </div>
     </div>
   </div>

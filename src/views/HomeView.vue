@@ -1,10 +1,4 @@
-<script setup>
-// import { useApi } from '@/api/useApi'
-
-// const { data, get } = useApi()
-// get('/sherlar')
-// console.log(data.value)
-</script>
+<script setup></script>
 
 <template>
   <main>
@@ -36,7 +30,7 @@
         </p>
       </div>
     </div>
-    <div
+    <!-- <div
       class="w-full max-w-[1800px] m-auto bg-white shadow-md rounded-xl mb-10 px-16 py-4 max-m:px-5"
     >
       <h1 class="text-[40px] font-semibold mb-10">Sa’dulla Hakim</h1>
@@ -76,6 +70,6 @@
         davlatimiz va adabiy jamoatchilik tomonidan keng miqyosda nishonlanib, shoir yashagan uyga
         yodgorlik lavhasi o‘rnatildi.
       </p>
-    </div>
+    </div> -->
   </main>
 </template>

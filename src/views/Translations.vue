@@ -1,10 +1,8 @@
 <script setup lang="ts">
+import { useApi } from '@/api/useApi'
 import TranslationList from '@/components/TranslationList/TranslationList.vue'
 
-const data = [
-  { id: 1, text: 'Kechagi kun (Lermentov sheri tarjimasi)' },
-  { id: 2, text: 'Kechagi kun (Lermentov sheri tarjimasi)' }
-]
+const { data } = useApi('/tarjimalar')
 </script>
 
 <template>
