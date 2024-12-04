@@ -1,46 +1,14 @@
-<script setup lang="ts">
+<script setup>
+import { useApi } from '@/api/useApi'
 import PoemsCard from '@/components/PoemsCard/PoemsCard.vue'
 import Button from '@/components/customButton/CustomButton.vue'
 
-interface DataType {
-  id: number
-  text: string
-  subtitle: string
-  title: string
-}
-
-const data: DataType[] = [
-  {
-    id: 1,
-    title: `QUDUQDAN TO’KILGAN NUR`,
-    text: `Olam to'rt unsurdan iborat: tuproq,<br/> suv, havo, olov. Odam to'rt ustundan <br/> barhayot: ota, 
-    ona, Vatan, el. `,
-    subtitle: 'SHOIRNING BIRINCHI SHE’RI:'
-  },
-  {
-    id: 2,
-    title: `EY, KO’NGIL`,
-    text: `Nopisand bosma xazon yaprog‘ini,<br/>Boshing uzra esla soya chog‘ini.<br/>Tanfi hukmiga azal bir chora yo‘q,<br/>Bandasi bilmas kelib-ketmog‘ini.`,
-    subtitle: ''
-  },
-  {
-    id: 3,
-    title: `OTALAR VA BOLALAR`,
-    text: `Agar xonadonga kirsa bir kitob<br/>Bir kuni, albatta, varaqlanajak.<br/>O‘smani qoshida yayratsa ona,<br/>Qizi zulfin qilar burama gajak.`,
-    subtitle: ''
-  },
-  {
-    id: 4,
-    title: `IZLAR`,
-    text: `Ikki cheti orasta,<br/>Yolg‘izoyoq chambil yo‘l.<br/>Ketib boraman asta,<br/>Har yonda giyohlar mo‘l.`,
-    subtitle: ''
-  }
-]
+const { data } = useApi('/sherlar')
 </script>
 
 <template>
   <section
-    class="bg-[url(@/assets/image/poems-bg.jpg)] min-h-[718px] w-full bg-top bg-cover flex items-center justify-center flex-col py-7 "
+    class="bg-[url(@/assets/image/poems-bg.jpg)] min-h-[718px] w-full bg-top bg-cover flex items-center justify-center flex-col py-7"
   >
     <div
       class="max-w-[660px] text-left font-semibold italic font-serif text-3xl max-sm:text-2xl max-m:text-xl max-s:text-base"
@@ -49,7 +17,7 @@ const data: DataType[] = [
       <h2 class="mb-6">ESKI KITOB</h2>
       <p>
         Eski kitoblarni o‘qidim ko‘p-ko‘p,<br />Oltinga topilmas ko‘rganim foyda:<br />Na’rasi
-        chaqmoqdek shiddatli sher ham<br />Mushukcha bo‘lolmas sir qochgan joyda. <br /><br />Eski
+        chaqmoqdek shiddatli sher ham<br />Mushukcha bo‘lolmas sir qochgan joyda.<br /><br />Eski
         kitoblarni o‘qidim ko‘p-ko‘p,<br />Bozorda sotilmas olganim saboq:<br />Sirti mahkam deya
         qolma chuv tushib,<br />Ichidan panglagay usti tosh yong‘oq.<br /><br />Eski kitoblarni
         o‘qidim takror,<br />Bilganim shu bo‘ldi, bilmaganim bu:<br />Bedorlik, oh, nega bunchalar

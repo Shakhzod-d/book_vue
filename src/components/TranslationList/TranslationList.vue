@@ -1,8 +1,8 @@
-<script setup lang="ts">
+<script setup>
 import { Download, Heart } from 'lucide-vue-next'
 
 defineProps({
-  data: Array<{ id: number; text: string }>
+  data: Array
 })
 </script>
 
@@ -14,7 +14,7 @@ defineProps({
       :key="item.id"
     >
       <p class="text-xl text-white font-medium max-sm:text-lg max-m:text-base max-s:text-xs">
-        {{ item.text }}
+        {{ item.ism }}
       </p>
       <div class="flex gap-4">
         <Heart color="white" />

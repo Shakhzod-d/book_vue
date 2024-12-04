@@ -1,14 +1,23 @@
-<script setup lang="ts">
-import { Heart } from 'lucide-vue-next'
-defineProps({ url: Array<{ id: number; url: string }> })
+<script setup>
+import { computed } from 'vue'
+const props = defineProps({
+  url: {
+    type: [Object, Array], // Adjust type based on `res`'s actual structure
+    required: true,
+  },
+})
+
+// If `url` is expected to be an object
+const data = computed(() => props.url || {})
 </script>
+
 <template>
-  <div
-    class="max-w-[400px] w-full h-[400px] rounded-[10px] shadow relative"
-    v-for="item of url"
-    :key="url?.id"
-  >
-    <Heart class="absolute top-3 right-3" />
-    <img :src="url?.url" alt="rasm" class="w-full h-full rounded-[10px]" />
+  <div>
+    <p v-if="!data || Object.keys(data).length === 0">No data available</p>
+    <div v-else>
+      <!-- Replace this logic with your actual rendering -->
+      <h1>{{ data.id }}</h1> <!-- Add null checks if `id` might not exist -->
+      <p>{{ data.name }}</p>
+    </div>
   </div>
 </template>

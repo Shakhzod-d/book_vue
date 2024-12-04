@@ -8,15 +8,15 @@ const router = useRouter(),
     { id: 2, path: '/videos', label: 'Video' }
   ],
   selectRoute = [
-    { id: 1, path: 'Poems', label: 'She’rlar ', param: '',  },
-    { id: 2, path: 'Translations', label: 'Tarjimalar', param: '',  },
-    { id: 3, path: 'Epics', label: 'Dostonlar', param: '',  },
-    { id: 4, path: 'Books', label: 'Kitoblar', param: '',  }
+    { id: 1, path: 'Poems', label: 'She’rlar ', param: '' },
+    { id: 2, path: 'Translations', label: 'Tarjimalar', param: '' },
+    { id: 3, path: 'Epics', label: 'Dostonlar', param: '' },
+    { id: 4, path: 'Books', label: 'Kitoblar', param: '' }
   ],
   selectRoute2 = [
-    { id: 1, path: 'Picture', label: 'Yoshlikdagi suratlar ', param: 'child', },
-    { id: 2, path: 'Picture', label: 'Oilaviy suratlar ', param: 'family', },
-    { id: 3, path: 'Picture', label: 'Hamkasblar bilan', param: 'jobs',  }
+    { id: 1, path: 'Picture', label: 'Yoshlikdagi suratlar ', param: '/yoshlikdagi-suratlar' },
+    { id: 2, path: 'Picture', label: 'Oilaviy suratlar ', param: '/oilaviy-suratlar' },
+    { id: 3, path: 'Picture', label: 'Hamkasblar bilan', param: '/hamkasblar-bilan' }
   ]
 </script>
 

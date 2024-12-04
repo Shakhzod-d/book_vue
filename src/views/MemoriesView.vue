@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { useApi } from '@/api/useApi'
 import MemoriesList from '@/components/MemoryList/MemoriesList.vue'
+const { data, } = useApi('/xotiralar')
 </script>
 
 <template>
@@ -14,6 +16,6 @@ import MemoriesList from '@/components/MemoryList/MemoriesList.vue'
         Xotiralar tirik odamlar, -<br />Mehru nafrat baxsiga kodir.
       </p>
     </div>
-    <MemoriesList />
+    <MemoriesList :data="data" />
   </div>
 </template>

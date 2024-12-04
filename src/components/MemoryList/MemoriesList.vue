@@ -1,10 +1,9 @@
-<script setup lang="ts">
+<script setup>
 import { Forward, Heart } from 'lucide-vue-next'
-const data = [
-  { id: 1, text: 'Abusaid Kuchimov (Bahor chaqmoqlari yoki mangu qoida)' },
-  { id: 2, text: "Shayx Abdulaziz Mansur (Sa'dulla Hakim xotirasi)" },
-  { id: 3, text: "Halim Sayid ('Ma'rifat' ga samimiyat keltirgan rahbar)" }
-]
+import { defineProps } from 'vue'
+defineProps({
+  data: Array
+})
 </script>
 
 <template>
@@ -15,7 +14,7 @@ const data = [
       :key="item.id"
     >
       <p class="text-xl text-white font-medium max-sm:text-base max-m:text-xs max-s:text-[10px]">
-        {{ item.text }}
+        {{ item.ism }}
       </p>
       <div class="flex gap-4">
         <Heart color="white" />
