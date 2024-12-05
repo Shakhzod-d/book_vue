@@ -94,6 +94,11 @@ const router = createRouter({
       component: () => import('../views/PictureView.vue')
     },
     {
+      path: '/read-book',
+      name: 'ReadBook',
+      component: () => import('../views/ReadBook.vue')
+    },
+    {
       path: '/poem/:slug',
       name: 'Poem',
       component: () => import('../views/Poem.vue')

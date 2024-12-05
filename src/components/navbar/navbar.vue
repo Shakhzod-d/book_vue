@@ -1,7 +1,25 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import CustomSelect from '../custom-select/custom-select.vue'
-import { Menu } from 'lucide-vue-next'
+import { Menu, X, ChevronDown } from 'lucide-vue-next'
+import { ref } from 'vue'
+
+const openModal = ref(false)
+const openSelect = ref(false)
+
+const select = () => (openSelect.value = !openSelect.value)
+
+const modal = () => (openModal.value = true)
+const closeModal = (e) => {
+  e.target === e.currentTarget
+    ? (openModal.value = false)
+    : e.target.classList.contains('btn')
+      ? (openModal.value = false)
+      : ''
+}
+
+const cModal = () => (openModal.value = false)
+
 const router = useRouter(),
   routes = [
     { id: 1, path: '/memories', label: 'Xotiralar' },
@@ -60,9 +78,88 @@ const router = useRouter(),
           <img src="../../../src/assets/icons/like.svg" alt="search" class="like" />
         </div>
       </div>
-      <button class="hidden max-lg:block">
+      <button class="hidden max-lg:block" @click="modal">
         <Menu color="#fff" size="30" class="max-m:w-6 max-m:h-6" />
       </button>
     </div>
   </header>
+  <transition name="modal">
+    <div
+      v-if="openModal.valueOf()"
+      @click="closeModal"
+      class="fixed w-full h-screen bg-[rgba(0,0,0,0.7)] z-50 flex justify-end translate-x-0"
+    >
+      <div class="bg-white w-[300px] h-screen relative p-6 pt-16">
+        <button class="btn absolute right-6 top-6" @click="cModal">
+          <X size="40" />
+        </button>
+
+        <nav>
+          <ul class="flex flex-col justify-between max-w-[700px] m-auto gap-4 max-xl:max-w-[500px]">
+            <RouterLink
+              :to="{ name: item.path, params: { slug: item.param } }"
+              class="text-black text-xl"
+              v-for="item in selectRoute"
+              :key="item.label"
+              @click="cModal"
+            >
+              {{ item.label }}
+            </RouterLink>
+
+            <RouterLink
+              :to="item.path"
+              class="text-xl text-black"
+              v-for="item of routes"
+              :key="item.id"
+              @click="cModal"
+            >
+              {{ item.label }}
+            </RouterLink>
+
+            <div class="flex flex-col">
+              <h2 class="text-xl text-black flex items-center gap-2" @click="select">
+                Suratlar <ChevronDown color="#000" />
+              </h2>
+              <div
+                v-if="openSelect.valueOf()"
+                class="flex flex-col justify-between max-w-[700px] pl-4 gap-4 max-xl:max-w-[500px]"
+              >
+                <RouterLink
+                  :to="{ name: item.path, params: { slug: item.param } }"
+                  class="text-black text-xl"
+                  v-for="item in selectRoute2"
+                  :key="item.label"
+                  @click="cModal"
+                >
+                  {{ item.label }}
+                </RouterLink>
+              </div>
+            </div>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </transition>
 </template>
+
+<style>
+.modal-enter-active,
+.modal-leave-active {
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    background-color 0.5s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.modal-enter-to,
+.modal-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+</style>

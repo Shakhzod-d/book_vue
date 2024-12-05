@@ -3,7 +3,7 @@ defineProps({ url: Array })
 </script>
 <template>
   <div
-    class="max-w-[400px] w-full h-[400px] rounded-[10px] shadow relative"
+    class="max-w-[300px] w-full h-[300px] rounded-[10px] shadow relative"
     v-for="item of url"
     :key="url.id"
   >
