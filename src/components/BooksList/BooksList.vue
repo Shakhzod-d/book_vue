@@ -28,9 +28,11 @@ defineProps({
         <button class="p-2 bg-gray-500 rounded-md text-white active:scale-[.9] w-full">
           yuklab olish
         </button>
-        <button class="p-2 bg-green-500 rounded-md text-white active:scale-[.9] w-full">
-          o'qish
-        </button>
+        <RouterLink to="/read-book" class="w-full">
+          <button class="p-2 bg-green-500 rounded-md text-white active:scale-[.9] w-full">
+            o'qish
+          </button>
+        </RouterLink>
       </div>
     </div>
   </div>

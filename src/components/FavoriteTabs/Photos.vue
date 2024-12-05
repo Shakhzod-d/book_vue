@@ -1,5 +1,6 @@
 <script setup>
 import PictureCard from '@/components/PictureCard/PictureCard.vue'
+import FavoriteEmpty from '@/components/FavoriteEmpty/FavoriteEmpty.vue'
 
 const imgData = [
   {
@@ -37,6 +38,11 @@ const imgData = [
   <div
     class="grid grid-cols-4 max-3xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 justify-items-center gap-[50px] my-10"
   >
-    <PictureCard :url="imgData" />
+    <template v-if="imgData.length !== 0">
+      <PictureCard :url="imgData" />
+    </template>
+    <template v-else>
+      <FavoriteEmpty />
+    </template>
   </div>
 </template>

@@ -6,4 +6,5 @@ import FavoriteMemory from '../MemoryList/FavoriteMemory.vue';
 
 <template>
   <FavoriteMemory/>
+  
 </template>

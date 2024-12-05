@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import FavoritePoemsCard from '@/components/FavoritePoemsCard/FavoritePoemsCard.vue'
+import FavoriteEmpty from '@/components/FavoriteEmpty/FavoriteEmpty.vue'
 
 interface DataType {
   id: number
@@ -32,6 +33,11 @@ const data: DataType[] = [
 
 <template>
   <div class="my-10">
-    <FavoritePoemsCard :poems="data" />
+    <template v-if="data.length !== 0">
+      <FavoritePoemsCard :poems="data" />
+    </template>
+    <template v-else>
+      <FavoriteEmpty />
+    </template>
   </div>
 </template>

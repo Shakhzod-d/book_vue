@@ -10,19 +10,21 @@ import { Download, Heart, Forward } from 'lucide-vue-next'
         src=""
         allowfullscreen
       ></iframe>
+      <h2>Vedio title</h2>
+      <p>video Description</p>
     </div>
     <div class="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 justify-center my-16 gap-20">
       <div
-        class="flex gap-3 flex-col flex-shrink-0"
+        class="flex gap-3 flex-col flex-shrink-0 relative"
         v-for="item in ['', '', '', '', '', '']"
         :key="item"
       >
         <div class="flex-shirk-0 w-full flex items-end gap-5">
           <iframe
-            class="flex-shirk-0 max-w-[426px] w-full h-[284px] bg-zinc-300 rounded-[20px] bg-[url(@/assets/image/vedio.png)] bg-no-repeat bg-center"
+            class="flex-shirk-0 w-full h-[284px] bg-zinc-300 rounded-[20px] bg-[url(@/assets/image/vedio.png)] bg-no-repeat bg-center"
             src=""
           ></iframe>
-          <div class="flex flex-col gap-5">
+          <div class="flex flex-col gap-5 absolute right-5 top-36">
             <Heart />
             <Forward />
             <Download />

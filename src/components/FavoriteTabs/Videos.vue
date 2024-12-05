@@ -3,5 +3,7 @@ import FavoriteVideoPlayer from '@/components/FavoriteVideoPlayer/FavoriteVideoP
 </script>
 
 <template>
-  <div class="container"><FavoriteVideoPlayer /></div>
+  <div class="container">
+    <FavoriteVideoPlayer />
+    </div>
 </template>
