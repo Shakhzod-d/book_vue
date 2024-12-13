@@ -64,10 +64,10 @@ export const useApi = (url) => {
   const error = ref(null)
   const data = ref(null)
 
-  const fetchData = async () => {
+  const fetchData = async (pathUrl) => {
     try {
       loading.value = true
-      const res = await api.get(url)
+      const res = await api.get(pathUrl)
       data.value = res.data
     } catch (err) {
       console.error('Error fetching API data:', err)
@@ -77,6 +77,6 @@ export const useApi = (url) => {
     }
   }
 
-  fetchData() // API ma'lumotini olishni boshlaymiz
-  return { loading, error, data } // Qaytish qiymatlari
+  fetchData(url) // API ma'lumotini olishni boshlaymiz
+  return { loading, error, data ,fetchData} // Qaytish qiymatlari
 }

@@ -12,7 +12,7 @@ defineProps({
       :key="item"
     >
       <div class="w-full h-[150px]">
-        <img :src="item.muqova" alt="photo" class="h-[150px] object-center" />
+        <img :src="item.muqova" alt="photo" class="h-[150px] object-center w-full" />
       </div>
       <h4 class="text-[20px] font-bold">{{ item.ism }}</h4>
       <p class="font-semibold mb-1">
@@ -25,9 +25,12 @@ defineProps({
         Til: <b>{{ item.til }}</b>
       </p>
       <div class="flex gap-1">
-        <button class="p-2 bg-gray-500 rounded-md text-white active:scale-[.9] w-full">
+        <download
+          class="p-2 bg-gray-500 rounded-md text-white active:scale-[.9] w-full"
+          is="https://sadulla-hakim.tolipovv.uz/media/data/SAYLANMA_X7wMUAC.pdf"
+        >
           yuklab olish
-        </button>
+        </download>
         <RouterLink to="/read-book" class="w-full">
           <button class="p-2 bg-green-500 rounded-md text-white active:scale-[.9] w-full">
             o'qish

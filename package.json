@@ -11,13 +11,18 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@react-pdf-viewer/core": "^3.12.0",
     "axios": "^1.7.8",
     "dompurify": "^3.2.2",
     "lucide-vue-next": "^0.460.0",
     "pdf-viewer-vue": "^0.2.7",
-    "pdfjs-dist": "^4.8.69",
+    "pdfjs-dist": "^3.11.174",
     "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "vue-pdf": "^4.3.0",
+    "vue-pdf-embed": "^2.1.1",
+    "vue-router": "^4.3.3",
+    "vue3-pdf": "^4.2.6",
+    "vue3-pdfjs": "^0.1.6"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

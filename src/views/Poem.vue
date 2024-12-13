@@ -3,8 +3,8 @@ import { useApi } from '@/api/useApi'
 import { Heart, Forward, Eye } from 'lucide-vue-next'
 import { useRoute } from 'vue-router'
 const route = useRoute() // Route ma'lumotlariga kirish
-const id = route.params.slug
-const { data } = useApi(`/id-orqali/${id}/`)
+const id = route.params.id
+const { data } = useApi(`/id-orqali/${id}`)
 
 // const sanitizedHtml = DOMPurify.sanitize(data[0].text)
 
