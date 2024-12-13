@@ -22,5 +22,5 @@ const { data } = useApi('/dostonlar')
       unutsa deyman. Asarning ichida kitobhonning o'zi ham yashasa deyman.
     </p>
   </header>
-  <section><TranslationList :data="data" /></section>
+  <section><TranslationList :data="data?.items" /></section>
 </template>

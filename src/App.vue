@@ -1,6 +1,5 @@
 <script setup>
 import { Navbar, Footer } from './components'
-
 </script>
 
 <template>

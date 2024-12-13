@@ -107,9 +107,9 @@ const router = useRouter(),
             </RouterLink>
 
             <RouterLink
+              v-for="item of routes"
               :to="item.path"
               class="text-xl text-black"
-              v-for="item of routes"
               :key="item.id"
               @click="cModal"
             >
@@ -125,9 +125,9 @@ const router = useRouter(),
                 class="flex flex-col justify-between max-w-[700px] pl-4 gap-4 max-xl:max-w-[500px]"
               >
                 <RouterLink
-                  :to="{ name: item.path, params: { slug: item.param } }"
                   class="text-black text-xl"
                   v-for="item in selectRoute2"
+                  :to="{ name: item.path, params: { slug: item.param } }"
                   :key="item.label"
                   @click="cModal"
                 >

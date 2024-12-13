@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
@@ -91,7 +91,7 @@ const router = createRouter({
     {
       path: '/picture/:slug',
       name: 'Picture',
-      component: () => import('../views/PictureView.vue')
+      component: () => import('../views/FamilyPicture.vue')
     },
     {
       path: '/read-book',
@@ -99,7 +99,7 @@ const router = createRouter({
       component: () => import('../views/ReadBook.vue')
     },
     {
-      path: '/poem/:slug',
+      path: '/poem/:id',
       name: 'Poem',
       component: () => import('../views/Poem.vue')
     }
@@ -107,4 +107,4 @@ const router = createRouter({
   linkActiveClass: 'active'
 })
 
-export default router
+

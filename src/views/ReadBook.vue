@@ -1,29 +1,41 @@
-<script setup>
-import { ref } from 'vue'
-import PdfViewer from 'pdf-viewer-vue'
-import { GlobalWorkerOptions } from 'pdfjs-dist'
+<!-- <script setup>
+import { ref, onMounted } from 'vue';
+import * as pdfjsLib from 'pdfjs-dist';
+import pdfWorker from 'pdfjs-dist/build/pdf.worker.entry';
 
-// Worker'ni sozlash
-GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`
+// PDF.js uchun worker URLni o'rnatish
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
 
-const pdfSrc = ref('/src/assets/book.pdf') // Faylni public papkaga joylang
+// PDF manzilini sozlash
+const pdfSrc = ref('https://sadulla-hakim.tolipovv.uz/media/data/SAYLANMA_X7wMUAC.pdf');
+const canvasRef = ref(null);
 
-const onLoaded = () => {
-  console.log('PDF fayli yuklandi!')
-}
+const renderPdf = async () => {
+  try {
+    const canvas = canvasRef.value;
+    if (!canvas) {
+      console.error('Canvas elementi topilmadi!');
+      return;
+    }
 
-const onError = (error) => {
-  console.error('PDF yuklashda xatolik:', error)
-}
-</script>
+    // PDF faylini yuklash
+    const pdf = await pdfjsLib.getDocument(pdfSrc.value).promise;
 
+    // Birinchi sahifani olish
+    const page = await pdf.getPage(1);
+
+    // Sahifani o'lchamiga moslashtirish
+    const scale = 1.5;
+    const viewport = page.getViewport({ scale });
+
+    // Canvas sozlash
+    const context = canvas.getContext('2d');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+
+    // Canvasga PDFni render qilish
+    const renderContext = {
+      canvasCont -->
 <template>
-  <PdfViewer
-    :source="pdfSrc"
-    @loaded="onLoaded"
-    @error="onError"
-    @rendering="() => console.log('PDF Rendering boshladi...')"
-    @rendered="() => console.log('PDF Rendering tugadi')"
-  >
-  </PdfViewer>
+  <h1>Book Read</h1>
 </template>

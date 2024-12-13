@@ -1,6 +1,7 @@
 <script setup>
-import { Forward, Heart } from 'lucide-vue-next'
+import { Forward,  } from 'lucide-vue-next'
 import { defineProps } from 'vue'
+import LikeBtn from '../LIkeBtn/LikeBtn.vue'
 defineProps({
   data: Array
 })
@@ -17,7 +18,7 @@ defineProps({
         {{ item.ism }}
       </p>
       <div class="flex gap-4">
-        <Heart color="white" />
+        <LikeBtn :id="item.id" name="xotiralar"/>
         <Forward color="white" />
       </div>
     </div>

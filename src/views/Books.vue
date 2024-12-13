@@ -7,6 +7,6 @@ console.log(data)
 </script>
 <template>
   <div class="p-10">
-    <BooksList :books="data" />
+    <BooksList :books="data?.items" />
   </div>
 </template>

@@ -1,23 +1,16 @@
-<script setup lang="ts">
+<script setup>
 import { useRouter } from 'vue-router'
-import { PropType } from 'vue'
 
-interface Poem {
-  id: number
-  text: string
-  subtitle: string
-  title: string
-}
 
 defineProps({
   poems: {
-    type: Array as PropType<Poem[]>,
+    type: Array,
     required: true
   }
 })
 const router = useRouter()
 
-function goToPoem(slug: string) {
+function goToPoem(slug) {
   router.push({ name: 'Poem', params: { slug } })
 }
 </script>

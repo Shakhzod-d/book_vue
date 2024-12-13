@@ -23,6 +23,6 @@ const { data } = useApi('/tarjimalar')
     </div>
   </section>
   <div>
-    <TranslationList :data="data" />
+    <TranslationList :data="data?.items" />
   </div>
 </template>

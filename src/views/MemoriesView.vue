@@ -1,7 +1,19 @@
-<script setup lang="ts">
+<script setup>
 import { useApi } from '@/api/useApi'
 import MemoriesList from '@/components/MemoryList/MemoriesList.vue'
-const { data, } = useApi('/xotiralar')
+import Pagination from '@/components/pagination/pagination.vue'
+import { ref, watch } from 'vue'
+
+const page = ref(0)
+const { data, loading, fetchData } = useApi(`/xotiralar/?limit=10&offset=${page.value}`)
+
+const pagination = (num) => {
+  page.value = num
+  console.log(num)
+}
+watch(page, (newPage) => {
+  fetchData(`/sherlar/?limit=100&offset=${newPage}`)
+})
 </script>
 
 <template>
@@ -16,6 +28,12 @@ const { data, } = useApi('/xotiralar')
         Xotiralar tirik odamlar, -<br />Mehru nafrat baxsiga kodir.
       </p>
     </div>
-    <MemoriesList :data="data" />
+    <div class="h-[300px] flex justify-center items-center" v-if="loading">
+      <img src="../assets/icons/loading.svg" alt="" />
+    </div>
+    <MemoriesList :data="data?.items" v-else />
+    <div class="flex justify-center gap-3 py-2 mt-5">
+      <Pagination v-if="data" :count="data.count" :set-count="pagination" />
+    </div>
   </div>
 </template>

@@ -1,9 +1,19 @@
 <script setup>
 import { useApi } from '@/api/useApi'
+import Pagination from '@/components/pagination/pagination.vue'
 import PoemsCard from '@/components/PoemsCard/PoemsCard.vue'
-import Button from '@/components/customButton/CustomButton.vue'
+import { ref, watch } from 'vue'
 
-const { data } = useApi('/sherlar')
+const page = ref(0)
+const { data: PoemData, loading, fetchData } = useApi(`/sherlar/?limit=4&offset=${page.value}`)
+
+const pagination = (num) => {
+  page.value = num
+  console.log(num)
+}
+watch(page, (newPage) => {
+  fetchData(`/sherlar/?limit=100&offset=${newPage}`)
+})
 </script>
 
 <template>
@@ -28,13 +38,17 @@ const { data } = useApi('/sherlar')
     </div>
   </section>
   <section class="container mt-16">
-    <PoemsCard :poems="data" />
-    <div class="w-full flex justify-center gap-3 py-2">
-      <Button :text="'Prev'" />
-      <Button :text="'1'" />
-      <Button :text="'2'" />
-      <Button :text="'..'" />
-      <Button :text="'next'" />
+    <div class="h-[300px] flex justify-center items-center" v-if="loading">
+      <img src="../assets/icons/loading.svg" alt="" />
+    </div>
+    <PoemsCard :poems="PoemData?.items" v-if="!loading" />
+    <div class="flex justify-center gap-3 py-2 mt-5">
+      <Pagination
+        v-if="PoemData"
+        :count="PoemData.count"
+        :set-count="pagination"
+     
+      />
     </div>
   </section>
 </template>
